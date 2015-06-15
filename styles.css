@@ -25,3 +25,20 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.CircularDancer{
+  border: 10px solid green;
+}
+
+.WavyDancer{
+
+}
+
+.BlinkyDancer{
+  border: 10px solid blue;
+  border-radius: 0px;
+}
+
+.GrowingDancer {
+  border: 10px solid purple;
+}

@@ -9,7 +9,7 @@ WavyDancer.prototype.constructor = WavyDancer;
 
 WavyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
-
+  debugger;
   this.lifetime += this.timeBetweenSteps;
   var styleSettings = {
     top: this.top,
