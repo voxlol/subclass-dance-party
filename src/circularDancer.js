@@ -10,6 +10,7 @@ CircularDancer.prototype.constructor = CircularDancer;
 CircularDancer.prototype.step = function(){
   Dancer.prototype.step.call(this);
 
+  //find the nearest Carlton
   var ind = -1, dist = 100000;
   for(var i = 0; i < window.dancers.length; i++){
     var dancer = window.dancers[i];
@@ -21,8 +22,7 @@ CircularDancer.prototype.step = function(){
       }
     }
   }
-
-  //debugger;
+  //move towards him
   if(ind >= 0) {
     var nearestCarlton = window.dancers[ind];
     var carltonHeight = nearestCarlton.$node.css("height");
@@ -35,7 +35,6 @@ CircularDancer.prototype.step = function(){
     this.left += (x - this.left)/20;
   }
 
-  //debugger;
   // Randomize color
   var hex = '0123456789ABCDEF';
   var randomColor = "#";
