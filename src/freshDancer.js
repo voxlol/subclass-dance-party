@@ -1,4 +1,4 @@
-var FreshDancer = function(top, left, timeBetweenSteps){
+function FreshDancer(top, left, timeBetweenSteps){
   Dancer.call(this, top, left);
   this.$node = $('<img class="dancer" src="images/8bitcarlton.gif">');
   this.setPosition(top, left);

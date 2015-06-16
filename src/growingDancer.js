@@ -1,4 +1,4 @@
-var GrowingDancer = function(top, left, timeBetweenSteps){
+function GrowingDancer(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
   this.growing = true;
   this.size = 10;

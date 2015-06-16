@@ -29,6 +29,21 @@ $(document).ready(function(){
     dancer.$node.addClass(dancerMakerFunctionName);
 
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
   });
+
+  // Initialize a few dancers
+  var dancerTypes = [BlinkyDancer, CircularDancer, FreshDancer, GrowingDancer, WavyDancer];
+  for(var i=0; i < dancerTypes.length; i++) {
+    dancer = new dancerTypes[i](
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 1000
+    );
+    dancer.$node.addClass(dancerTypes[i].name);
+
+    $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  }
 });
 

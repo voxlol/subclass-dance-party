@@ -1,4 +1,4 @@
-var WavyDancer = function(top, left){
+function WavyDancer(top, left){
   Dancer.call(this, top, left);
   this.timeBetweenSteps = 50;
   this.lifetime = 0;
@@ -12,7 +12,6 @@ WavyDancer.prototype.step = function() {
 
   this.lifetime += this.timeBetweenSteps;
   var styleSettings = {
-    top: this.top,
     left: this.left + 100*Math.sin(this.lifetime)
   };
   this.$node.css(styleSettings);
