@@ -35,13 +35,21 @@ CircularDancer.prototype.step = function(){
     this.left += (x - this.left)/20;
   }
 
+  //debugger;
   // Randomize color
+  var hex = '0123456789ABCDEF';
+  var randomColor = "#";
+  for(var j = 0; j < 6; j++){
+    var randomIx = Math.floor(Math.random()*16)
+    randomColor += hex[randomIx];
+  }
 
 
   this.lifetime += this.timeBetweenSteps;
   var styleSettings = {
     top: this.top + 100 * Math.cos(this.lifetime),
-    left: this.left + 100 * Math.sin(this.lifetime)
+    left: this.left + 100 * Math.sin(this.lifetime),
+    borderColor : randomColor
   };
 
   this.$node.css(styleSettings);
