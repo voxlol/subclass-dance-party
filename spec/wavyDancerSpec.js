@@ -6,17 +6,17 @@ describe("wavyDancer", function() {
 
   beforeEach(function() {
     clock = sinon.useFakeTimers();
-    wavyDancer = new wavyDancer(10, 20, timeBetweenSteps);
+    wavyDancer = new WavyDancer(10, 20, timeBetweenSteps);
   });
 
   it("should have a jQuery $node object", function(){
     expect(wavyDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it("should have a step function that makes its node blink", function() {
-    sinon.spy(wavyDancer.$node, 'toggle');
+  it("should have a step function that changes the left property", function() {
+    var oldLeft = wavyDancer.$node.css("left");
     wavyDancer.step();
-    expect(wavyDancer.$node.toggle.called).to.be.true;
+    expect(wavyDancer.left).to.not.equal(wavyDancer.$node.css("left"));
   });
 
   describe("dance", function(){

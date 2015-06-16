@@ -32,18 +32,26 @@ $(document).ready(function(){
     window.dancers.push(dancer);
   });
 
-  // Initialize a few dancers
-  var dancerTypes = [BlinkyDancer, CircularDancer, FreshDancer, GrowingDancer, WavyDancer];
-  for(var i=0; i < dancerTypes.length; i++) {
-    dancer = new dancerTypes[i](
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 1000
-    );
-    dancer.$node.addClass(dancerTypes[i].name);
+  // Initialize one dancer of each type
+  // var dancerTypes = [BlinkyDancer, CircularDancer, FreshDancer, GrowingDancer, WavyDancer];
+  // for(var i=0; i < dancerTypes.length; i++) {
+  //   dancer = new dancerTypes[i](
+  //     $("body").height() * Math.random(),
+  //     $("body").width() * Math.random(),
+  //     Math.random() * 1000
+  //   );
+  //   dancer.$node.addClass(dancerTypes[i].name);
 
-    $('body').append(dancer.$node);
-    window.dancers.push(dancer);
-  }
+  //   $('body').append(dancer.$node);
+  //   window.dancers.push(dancer);
+  // }
+
+  // LineUp Button event handler
+  $('button').on('click', function(e){
+    console.log('clicked the button');
+    for(var i = 0; i < window.dancers.length ; i++){
+      window.dancers[i].lineUp();
+    }
+  });
 });
 

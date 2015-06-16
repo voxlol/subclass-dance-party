@@ -1,6 +1,5 @@
 function BlinkyDancer(top, left, timeBetweenSteps){
   Dancer.call(this, top, left, timeBetweenSteps);
-  //this.step();
 };
 
 BlinkyDancer.prototype = Object.create(Dancer.prototype);
@@ -26,7 +25,6 @@ BlinkyDancer.prototype.step = function(){
     }
   }
 
-  //debugger;
   if(ind >= 0) {
     var nearestCarlton = window.dancers[ind];
     var carltonHeight = nearestCarlton.$node.css("height");

@@ -4,6 +4,11 @@ function FreshDancer(top, left, timeBetweenSteps){
   this.setPosition(top, left);
   this.timeBetweenSteps = 250;
   this.rotationSpeed = 5;
+  this.width = 106;
+  this.height = 122;
+  // Centered position on the X, Y
+  this.x = this.left + this.width/2;
+  this.y = this.top + this.height/2;
 
   var direction = Math.random();
   if(direction >= 0.5) {
@@ -12,18 +17,18 @@ function FreshDancer(top, left, timeBetweenSteps){
     this.rotationAmount = -0.0001;
   }
 
-/*
-  var speed = this.rotationSpeed;
-  this.$node.on('click', function() {
-    console.log("hi");
-    speed[0] += 3;
-  });*/
-
   var that = this;
   this.$node.on('mouseover', function() {
-    console.log("hi");
     that.rotationSpeed += 3;
   });
+
+  this.$node.on('click', function() {
+    $(this).removeClass("FreshDancer");
+    var styleSettings = {
+      display: "none"
+    }
+    $(this).css(styleSettings);
+  })
 }
 
 FreshDancer.prototype = Object.create(Dancer.prototype);
